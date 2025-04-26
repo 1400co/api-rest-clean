@@ -33,4 +33,4 @@ dotnet add ./ApiRestClean.API/ApiRestClean.API.csproj reference ./ApiRestClean.I
 
 ## Paso 5
 cd ApiRestClean.API
-dotnet run
+dotnet watch run
