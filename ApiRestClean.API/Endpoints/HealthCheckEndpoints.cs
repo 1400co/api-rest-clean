@@ -8,7 +8,7 @@ public class HealthCheckEndpoint : IEndpoint
         {
             return Results.Ok(new
             {
-                status = "Healthy ✅",
+                status = "Healthy Minimal API ✅",
                 environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"),
                 time = DateTime.UtcNow
             });

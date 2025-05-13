@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiRestClean.Core", "ApiRestClean.Core\ApiRestClean.Core.csproj", "{55EEBC8B-6030-495F-A8AA-DC5EA42BA78F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiRestClean.Core", "ApiRestClean.Core\ApiRestClean.Core.csproj", "{145E599F-E792-4A16-99E1-EE9E1FD64012}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiRestClean.Infrastructure", "ApiRestClean.Infrastructure\ApiRestClean.Infrastructure.csproj", "{A35091DC-0665-47EC-A383-4E6718A3EE68}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiRestClean.Infrastructure", "ApiRestClean.Infrastructure\ApiRestClean.Infrastructure.csproj", "{6C5C3091-CFD0-401A-A299-8F0B0C0B60B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiRestClean.API", "ApiRestClean.API\ApiRestClean.API.csproj", "{A760F71B-FCB9-45AC-8530-DF9BF9D01B76}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiRestClean.API", "ApiRestClean.API\ApiRestClean.API.csproj", "{60830486-8B79-43F2-A7DF-C61BB930FA3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,17 +18,17 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{55EEBC8B-6030-495F-A8AA-DC5EA42BA78F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{55EEBC8B-6030-495F-A8AA-DC5EA42BA78F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{55EEBC8B-6030-495F-A8AA-DC5EA42BA78F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{55EEBC8B-6030-495F-A8AA-DC5EA42BA78F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A35091DC-0665-47EC-A383-4E6718A3EE68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A35091DC-0665-47EC-A383-4E6718A3EE68}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A35091DC-0665-47EC-A383-4E6718A3EE68}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A35091DC-0665-47EC-A383-4E6718A3EE68}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A760F71B-FCB9-45AC-8530-DF9BF9D01B76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A760F71B-FCB9-45AC-8530-DF9BF9D01B76}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A760F71B-FCB9-45AC-8530-DF9BF9D01B76}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A760F71B-FCB9-45AC-8530-DF9BF9D01B76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{145E599F-E792-4A16-99E1-EE9E1FD64012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{145E599F-E792-4A16-99E1-EE9E1FD64012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{145E599F-E792-4A16-99E1-EE9E1FD64012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{145E599F-E792-4A16-99E1-EE9E1FD64012}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C5C3091-CFD0-401A-A299-8F0B0C0B60B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C5C3091-CFD0-401A-A299-8F0B0C0B60B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C5C3091-CFD0-401A-A299-8F0B0C0B60B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C5C3091-CFD0-401A-A299-8F0B0C0B60B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60830486-8B79-43F2-A7DF-C61BB930FA3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60830486-8B79-43F2-A7DF-C61BB930FA3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60830486-8B79-43F2-A7DF-C61BB930FA3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60830486-8B79-43F2-A7DF-C61BB930FA3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
