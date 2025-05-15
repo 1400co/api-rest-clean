@@ -91,3 +91,55 @@ Crear Controller y Endpoints
 ## Paso 14 
 dotnet build
 dotnet watch run
+
+#Modulo 2 Bonus - Implementar Vertical Slice
+
+## Paso 15
+
+Agregar referencia de MediatR
+dotnet add ApiRestClean.Core package MediatR
+dotnet add ApiRestClean.Core package FluentValidation
+dotnet add ApiRestClean.Core package MediatR
+dotnet add ApiRestClean.Core package FluentResults
+
+##Paso 16
+
+Crear la carpeta Features y agregar la clase CreateProduct
+
+## Paso 17
+prepara el procyeto infrastructure para usar MediatR
+
+dotnet add ApiRestClean.Infrastructure package MediatR.Extensions.Microsoft.DependencyInjection
+dotnet add ApiRestClean.Infrastructure package FluentValidation.DependencyInjectionExtensions
+
+##Paso 18
+
+agregar las dependencias de MediatR
+
+    using Microsoft.Extensions;
+    using Microsoft.Extensions.DependencyInjection;
+    using ApiRestClean.Core.Interfaces;
+    using ApiRestClean.Infrastructure.Repositories;
+    using MediatR;
+    using FluentValidation;
+    using ApiRestClean.Core.Features.PipelineBehaviors;
+    using System.Reflection;
+
+    services.AddSingleton<IProductRepository, InMemoryProductRepository>();
+        services.AddMediatR(cfg =>
+            {
+                cfg.RegisterServicesFromAssembly(Assembly.Load("ApiRestClean.Core"));
+                cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidationPipelineBehavior<,>), ServiceLifetime.Scoped);
+            });
+
+        // Registra todos los validadores de FluentValidation en el assembly de Core
+        services.AddValidatorsFromAssembly(Assembly.Load("ApiRestClean.Core"));
+
+        // Si usaras EF Core: services.AddDbContext<AppDbContext>(options => ...);
+
+## Paso 19
+
+Crear la carpeta Features y agregar la clase CreateProduct en el API
+agregar el endpoint POST /products
+
+
