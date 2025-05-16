@@ -7,7 +7,7 @@ public class CreateProductEndpoint : IEndpoint
 {
     public void RegisterRoutes(IEndpointRouteBuilder app)
     {
-        app.MapPost("/vertical-slice-products", async (CreateProduct.Request command, ISender sender) =>
+        app.MapPost("/vertical-slice-products", async (CreateProduct.CreateProductRequest command, ISender sender) =>
         {
             var result = await sender.Send(command);
             return Results.Created($"/products/{result.Value.Id}", result.Value);

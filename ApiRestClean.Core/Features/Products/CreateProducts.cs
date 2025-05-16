@@ -8,18 +8,18 @@ namespace ApiRestClean.Core.Features.Products;
 
 public class CreateProduct
 {
-    public class Request : IRequest<Result<Response>>
+    public class CreateProductRequest : IRequest<Result<CreateProductResponse>>
     {
         public required string Name { get; set; }
         public decimal Price { get; set; }
     }
 
-    public class Response
+    public class CreateProductResponse
     {
         public Guid Id { get; set; }
     }
 
-    public class Validator : AbstractValidator<Request>
+    public class Validator : AbstractValidator<CreateProductRequest>
     {
         public Validator()
         {
@@ -27,7 +27,7 @@ public class CreateProduct
         }
     }   
 
-    public class Handler : IRequestHandler<Request, Result<Response>>
+    public class Handler : IRequestHandler<CreateProductRequest, Result<CreateProductResponse>>
     {
         private readonly IProductRepository _productRepository;
 
@@ -36,7 +36,7 @@ public class CreateProduct
             _productRepository = productRepository;
         }        
 
-        public async Task<Result<Response>> Handle(Request request, CancellationToken cancellationToken)
+        public async Task<Result<CreateProductResponse>> Handle(CreateProductRequest request, CancellationToken cancellationToken)
         {
             var product = new Product
             {
@@ -46,7 +46,7 @@ public class CreateProduct
 
             _productRepository.Add(product);
 
-            return Result.Ok(new Response
+            return Result.Ok(new CreateProductResponse
             {
                 Id = product.Id
             });
