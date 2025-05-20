@@ -398,3 +398,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/ApiRestClean.Tests/Factus.Tests/appsettings.json
