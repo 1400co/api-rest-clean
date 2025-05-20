@@ -8,19 +8,19 @@ namespace ApiRestClean.Core.Features.Products;
 
 public class GetProduct
 {
-    public class Request : IRequest<Result<Response>>
+    public class GetProductRequest : IRequest<Result<GetProductResponse>>
     {
         public required Guid Id { get; set; }
     }
 
-    public class Response
+    public class GetProductResponse
     {
         public Guid Id { get; set; }
         public string Name { get; set; } = default!;
         public decimal Price { get; set; }
     }
 
-    public class Validator : AbstractValidator<Request>
+    public class Validator : AbstractValidator<GetProductRequest>
     {
         public Validator()
         {
@@ -28,7 +28,7 @@ public class GetProduct
         }
     }
 
-    public class Handler : IRequestHandler<Request, Result<Response>>
+    public class Handler : IRequestHandler<GetProductRequest, Result<GetProductResponse>>
     {
         private readonly IProductRepository _productRepository;
 
@@ -37,16 +37,16 @@ public class GetProduct
             _productRepository = productRepository;
         }
 
-        public Task<Result<Response>> Handle(Request request, CancellationToken cancellationToken)
+        public Task<Result<GetProductResponse>> Handle(GetProductRequest request, CancellationToken cancellationToken)
         {
             var product = _productRepository.GetById(request.Id);
 
             if (product == null)
             {
-                return Task.FromResult(Result.Fail<Response>("Product not found"));
+                return Task.FromResult(Result.Fail<GetProductResponse>("Product not found"));
             }
 
-            var response = new Response
+            var response = new GetProductResponse
             {
                 Id = product.Id,
                 Name = product.Name,

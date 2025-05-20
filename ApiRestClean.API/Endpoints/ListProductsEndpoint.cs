@@ -9,7 +9,7 @@ public class ListProductsEndpoint : IEndpoint
     {
         app.MapGet("/vertical-slice-list-products", async (string? name, ISender sender) =>
         {
-            var query = new ListProducts.Request { Name = name };
+            var query = new ListProducts.ListProductsRequest { Name = name };
             var result = await sender.Send(query);
 
             return Results.Ok(result.Value);

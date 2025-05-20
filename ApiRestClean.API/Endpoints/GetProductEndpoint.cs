@@ -9,7 +9,7 @@ public class GetProductEndpoint : IEndpoint
     {
         app.MapGet("/vertical-slice-get-product/{id:guid}", async (Guid id, ISender sender) =>
         {
-            var query = new GetProduct.Request { Id = id };
+            var query = new GetProduct.GetProductRequest { Id = id };
             var result = await sender.Send(query);
 
             if (result.IsFailed)

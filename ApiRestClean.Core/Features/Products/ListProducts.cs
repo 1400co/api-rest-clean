@@ -9,7 +9,7 @@ using ApiRestClean.Core.DTOS;
 
 public class ListProducts
 {
-    public class Request : IRequest<Result<Response>>
+    public class ListProductsRequest : IRequest<Result<ListProductsResponse>>
     {
         /// <summary>
         /// Filtro opcional por nombre (contiene, case-insensitive)
@@ -17,12 +17,12 @@ public class ListProducts
         public string? Name { get; set; }
     }
 
-    public class Response
+    public class ListProductsResponse
     {
         public List<ProductDto> Products { get; set; } = new();
     }
 
-    public class Validator : AbstractValidator<Request>
+    public class Validator : AbstractValidator<ListProductsRequest>
     {
         public Validator()
         {
@@ -30,7 +30,7 @@ public class ListProducts
         }
     }
 
-    public class Handler : IRequestHandler<Request, Result<Response>>
+    public class Handler : IRequestHandler<ListProductsRequest, Result<ListProductsResponse>>
     {
         private readonly IProductRepository _productRepository;
 
@@ -39,7 +39,7 @@ public class ListProducts
             _productRepository = productRepository;
         }
 
-        public Task<Result<Response>> Handle(Request request, CancellationToken cancellationToken)
+        public Task<Result<ListProductsResponse>> Handle(ListProductsRequest request, CancellationToken cancellationToken)
         {
             var products = _productRepository.GetAll();
 
@@ -51,7 +51,7 @@ public class ListProducts
                     .ToList();
             }
 
-            var response = new Response
+            var response = new ListProductsResponse
             {
                 Products = products.Select(p => new ProductDto
                 {
