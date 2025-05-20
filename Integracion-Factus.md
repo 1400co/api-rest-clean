@@ -2,37 +2,42 @@
 
 ## Crear proyecto
 
-dotnet new classlib -n Factus.Integration
-dotnet sln add ./Integrations/Factus.Integration/Factus.Integration.csproj
+mkdir Integrations
+cd Integrations
+dotnet new classlib -n Halltec.Factus --framework net8.0
+cd ..
+dotnet sln add ./Integrations/Halltec.Factus/Halltec.Factus.csproj
 
 ## agregar referencia   
-dotnet add ./ApiRestClean.Infrastructure/ApiRestClean.Infrastructure.csproj reference ./Integrations/Factus.Integration/Factus.Integration.csproj   
+dotnet add ./ApiRestClean.Infrastructure/ApiRestClean.Infrastructure.csproj reference ./Integrations/Halltec.Factus/Halltec.Factus.csproj
 
 ## agregar FactusService
 
-agregar Factus Service en Factus.Integration
+agregar Factus Service en Halltec.Factus
 
 ## Crear archivo de configuracion
 
-agregar FactusApiSettings en ApiRestClean.Infrastructure
+agregar FactusApiSettings en Halltec.Factus
 
-## Crear FactusService Interface 
+## Copiar Dtos
 
-agregar IInvoiceService en ApiRestClean.Core
-
-## agregar constructor de factusService
-
-agregar el constructor con la inyeccion de dependencias
-
-## agregar metodo de Authorization
-
-agregar metodo de Authorization en FactusService
 
 ## agregar proyecto tests 
 
+mkdir ApiRestClean.Tests
+cd ApiRestClean.Tests
 dotnet new classlib -n Factus.Tests --framework net8.0
+copiar archivo appsettings.json
+agregar al csproj 
+ <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  
+cd ..
 dotnet sln add ./ApiRestClean.Tests/Factus.Tests/Factus.Tests.csproj
-dotnet add ./ApiRestClean.Tests/Factus.Tests/Factus.Tests.csproj reference ./Integrations/Halltec.Factos/Halltec.Factos.csproj   
+dotnet add ./ApiRestClean.Tests/Factus.Tests/Factus.Tests.csproj reference ./Integrations/Halltec.Factus/Halltec.Factus.csproj   
 
 cd ./ApiRestClean.Tests/Factus.Tests/
 dotnet add package Microsoft.NET.Test.Sdk 

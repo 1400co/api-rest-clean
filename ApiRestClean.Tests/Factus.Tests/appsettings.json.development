@@ -1,0 +1,9 @@
+{
+  "FactusApi": {
+    "BaseUrl": "",
+    "Email": "",
+    "Password": "",
+    "ClientId": "",
+    "ClientSecret": ""
+  }
+} 

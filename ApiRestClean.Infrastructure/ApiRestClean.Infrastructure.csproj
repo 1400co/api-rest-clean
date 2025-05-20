@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ApiRestClean.Core\ApiRestClean.Core.csproj" />
+    <ProjectReference Include="..\Integrations\Halltec.Factus\Halltec.Factus.csproj" />
   </ItemGroup>
 
   <ItemGroup>
