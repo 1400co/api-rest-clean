@@ -143,3 +143,10 @@ Crear la carpeta Features y agregar la clase CreateProduct en el API
 agregar el endpoint POST /products
 
 
+# Bonus - Integracion Halltec
+
+## crear proyecto 
+
+dotnet new classlib -n Halltec.Factos
+dotnet sln add ./Integrations/Halltec.Factos/Halltec.Factos.csproj
+dotnet add ./ApiRestClean.Infrastructure/ApiRestClean.Infrastructure.csproj reference ./Integrations/Halltec.Factos/Halltec.Factos.csproj
